@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>JMT PROSERVICES | Passeport congolais</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f2f6fc;
+      color: #182943;
+    }
+    header {
+      background: linear-gradient(135deg, #092956, #1765a5);
+      color: white;
+      text-align: center;
+      padding: 28px 15px;
+      border-bottom: 5px solid #d6ad45;
+    }
+    .logo { font-size: 36px; font-weight: bold; letter-spacing: 2px; }
+    .logo span { color: #f2d27a; }
+    .slogan { font-size: 13px; margin-top: 5px; }
+    h1 { font-size: 23px; }
+    main { max-width: 760px; margin: 22px auto; padding: 0 13px; }
+    section {
+      background: white; padding: 20px; margin-bottom: 16px;
+      border-radius: 13px; box-shadow: 0 3px 14px #0b2c5910;
+    }
+    h2 { color: #0b2c59; font-size: 19px; margin-top: 0; }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 13px; }
+    .field { min-width: 0; }
+    .full { grid-column: 1 / -1; }
+    label { display: block; font-size: 13px; font-weight: bold; margin-bottom: 5px; }
+    input, select, textarea {
+      width: 100%; padding: 11px; border: 1px solid #cbd6e4;
+      border-radius: 8px; font: inherit; background: white;
+    }
+    textarea { min-height: 75px; }
+    .notice { font-size: 13px; line-height: 1.5; color: #526176; }
+    .consent { display: flex; align-items: flex-start; gap: 9px; margin: 15px 0; }
+    .consent input { width: 19px; margin-top: 3px; }
+    .consent label { font-weight: normal; line-height: 1.5; }
+    button {
+      width: 100%; border: 0; border-radius: 9px; padding: 15px;
+      background: #16834a; color: white; font-weight: bold;
+      font-size: 16px; cursor: pointer;
+    }
+    footer { text-align: center; padding: 20px 10px 30px; font-size: 13px; color: #526176; }
+    a { color: #145da0; }
+    @media(max-width: 560px) {
+      .grid { grid-template-columns: 1fr; }
+      .full { grid-column: auto; }
+      section { padding: 16px; }
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="logo"><span>J</span>MT</div>
+  <div style="font-weight:bold;letter-spacing:3px">PROSERVICES</div>
+  <div class="slogan">Votre partenaire pour toutes vos démarches</div>
+  <h1>Assistance au passeport congolais</h1>
+  <p>Complétez le formulaire pour contacter notre équipe.</p>
+</header>
+
+<main>
+  <section>
+    <p class="notice">
+      Vérifiez les renseignements demandés et ne fournissez que les informations
+      nécessaires à votre démarche. Les réponses ne sont pas enregistrées par
+      cette page : elles seront préparées dans WhatsApp afin que vous puissiez
+      les vérifier avant de les envoyer à JMT PROSERVICES.
+    </p>
+  </section>
+
+  <form id="passportForm">
+    <section>
+      <h2>1. Identité personnelle</h2>
+      <div class="grid">
+        <div class="field"><label for="nom">Nom *</label><input id="nom" name="Nom" required></div>
+        <div class="field"><label for="postnom">Post-nom *</label><input id="postnom" name="Post-nom" required></div>
+        <div class="field"><label for="prenom">Prénom *</label><input id="prenom" name="Prénom" required></div>
+        <div class="field"><label for="lieu">Lieu de naissance *</label><input id="lieu" name="Lieu de naissance" required></div>
+        <div class="field"><label for="date">Date de naissance *</label><input id="date" name="Date de naissance" type="date" required></div>
+        <div class="field"><label for="sexe">Sexe *</label><select id="sexe" name="Sexe" required><option value="">Choisir</option><option>Féminin</option><option>Masculin</option><option>Préfère ne pas préciser</option></select></div>
+        <div class="field"><label for="yeux">Couleur des yeux</label><input id="yeux" name="Couleur des yeux"></div>
+        <div class="field"><label for="taille">Taille (cm)</label><input id="taille" name="Taille"></div>
+        <div class="field full"><label for="adresse">Adresse complète au Congo *</label><textarea id="adresse" name="Adresse au Congo" required></textarea></div>
+        <div class="field"><label for="province">Province d’origine</label><input id="province" name="Province d’origine"></div>
+        <div class="field"><label for="territoire">Territoire</label><input id="territoire" name="Territoire"></div>
+        <div class="field"><label for="secteur">Secteur</label><input id="secteur" name="Secteur"></div>
+        <div class="field"><label for="village">Village</label><input id="village" name="Village"></div>
+        <div class="field"><label for="ethnie">Ethnie (si nécessaire)</label><input id="ethnie" name="Ethnie"></div>
+        <div class="field"><label for="profession">Profession</label><input id="profession" name="Profession"></div>
+        <div class="field"><label for="telephone">Numéro de téléphone *</label><input id="telephone" name="Téléphone" type="tel" required></div>
+        <div class="field"><label for="etat">État civil</label><select id="etat" name="État civil"><option value="">Choisir</option><option>Célibataire</option><option>Marié(e)</option><option>Divorcé(e)</option><option>Veuf / Veuve</option><option>Autre</option></select></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>2. Identité du père</h2>
+      <div class="grid">
+        <div class="field"><label for="pn">Nom</label><input id="pn" name="Père - Nom"></div>
+        <div class="field"><label for="ppn">Post-nom</label><input id="ppn" name="Père - Post-nom"></div>
+        <div class="field full"><label for="ppr">Prénom</label><input id="ppr" name="Père - Prénom"></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>3. Identité de la mère</h2>
+      <div class="grid">
+        <div class="field"><label for="mn">Nom</label><input id="mn" name="Mère - Nom"></div>
+        <div class="field"><label for="mpn">Post-nom</label><input id="mpn" name="Mère - Post-nom"></div>
+        <div class="field full"><label for="mpr">Prénom</label><input id="mpr" name="Mère - Prénom"></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>4. Confirmation</h2>
+      <p class="notice">
+        Les renseignements personnels et familiaux peuvent être sensibles.
+        En continuant, vous choisissez de transmettre les informations remplies
+        à JMT PROSERVICES par WhatsApp. WhatsApp applique ses propres conditions
+        de confidentialité. Évitez d’envoyer des documents sensibles sans avoir
+        vérifié le canal approprié.
+      </p>
+      <div class="consent">
+        <input type="checkbox" id="accord" required>
+        <label for="accord">Je confirme avoir vérifié les informations et accepte de les transmettre à JMT PROSERVICES via WhatsApp pour ma demande. *</label>
+      </div>
+      <button type="submit">Continuer sur WhatsApp</button>
+      <p class="notice">WhatsApp s’ouvrira avec un message préparé. Vous devrez appuyer sur « Envoyer » dans WhatsApp.</p>
+    </section>
+  </form>
+</main>
+
+<footer>
+  <strong>JMT PROSERVICES</strong><br>
+  WhatsApp : <a href="https://wa.me/27697838523">+27 69 783 8523</a><br>
+  E-mail : <a href="mailto:jmtproservice@gmail.com">jmtproservice@gmail.com</a>
+</footer>
+
+<script>
+document.getElementById('passportForm').addEventListener('submit', function(event) {
+  event.preventDefault();
+  if (!this.reportValidity()) return;
+
+  const lines = [
+    'Bonjour JMT PROSERVICES, je souhaite une assistance pour mon passeport congolais.',
+    ''
+  ];
+  const fields = new FormData(this);
+  for (const [name, value] of fields.entries()) {
+    const clean = String(value).trim();
+    if (clean) lines.push(name + ' : ' + clean);
+  }
+  lines.push('', 'J’ai confirmé les informations sur le formulaire.', 'Merci.');
+  const url = 'https://wa.me/27697838523?text=' + encodeURIComponent(lines.join('\n'));
+  window.location.href = url;
+});
+</script>
+</body>
+  </html>
